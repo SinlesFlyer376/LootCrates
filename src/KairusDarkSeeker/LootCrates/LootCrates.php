@@ -138,10 +138,10 @@ class LootCrates extends PluginBase implements Listener {
             if($tile instanceof Chest) {
                 $tile->setName("§3Rare §2Lootcrate");
                 $count = rand(1, 10);
-                $tile->getInventory()->addItem(Item::get(Item::STONE, 0, $count));
-                $tile->getInventory()->addItem(Item::get(Item::GLASS, 0, $count));
-                $tile->getInventory()->addItem(Item::get(Item::WOODEN_SWORD, 0, $count));
-                $tile->getInventory()->addItem(Item::get(Item::STICK, 0, $count));
+                $tile->getInventory()->addItem(Item::get(Item::STONE_SWORD, 0, $count));
+                $tile->getInventory()->addItem(Item::get(Item::IRON_INGOT, 0, $count));
+                $tile->getInventory()->addItem(Item::get(Item::DIAMOND, 0, 1));
+                $tile->getInventory()->addItem(Item::get(Item::GOLDEN_APPLE, 0, $count));
                 $tile->namedtag->LootCrate = new CompoundTag("LootCrate", [
                 	"Rarity" => new IntTag("Rarity", self::RARITY_COMMON)
                 ]);
@@ -159,15 +159,16 @@ class LootCrates extends PluginBase implements Listener {
             $tile = $chest->getLevel()->getTile($pos);
             if($tile instanceof Chest) {
                 $tile->setName("§aRare §2Lootcrate");
-                $count = rand(5, 25);
+                $count = rand(1, 16);
                 $tile->getInventory()->addItem(Item::get(Item::ARROW, 0, $count));
                 $tile->getInventory()->addItem(Item::get(Item::WOODEN_PLANK, 0, $count));
                 $tile->getInventory()->addItem(Item::get(Item::BOW, 0, 1));
-                $tile->getInventory()->addItem(Item::get(Item::CHAIN_HELMET, 0, 1));
-                $tile->getInventory()->addItem(Item::get(Item::CHAIN_CHESTPLATE, 0, 1));
-                $tile->getInventory()->addItem(Item::get(Item::CHAIN_LEGGINGS, 0, 1));
-                $tile->getInventory()->addItem(Item::get(Item::CHAIN_BOOTS, 0, 1));
-                $tile->getInventory()->addItem(Item::get(Item::IRON_INGOT, 0, $count));
+                $tile->getInventory()->addItem(Item::get(Item::IRON_HELMET, 0, 1));
+                $tile->getInventory()->addItem(Item::get(Item::IRON_CHESTPLATE, 0, 1));
+                $tile->getInventory()->addItem(Item::get(Item::ENCHANTED_GOLDEN_APPLE, 0, 7));
+                $tile->getInventory()->addItem(Item::get(Item::IRON_LEGGINGS, 0, 1));
+                $tile->getInventory()->addItem(Item::get(Item::IRON_BOOTS, 0, 1));
+                $tile->getInventory()->addItem(Item::get(Item::DIAMOND, 0, $count));
                 $tile->getInventory()->addItem(Item::get(Item::GOLDEN_APPLE, 0, $count));
                 $tile->getInventory()->addItem(Item::get(Item::IRON_AXE, 0, 1));
                 $tile->getInventory()->addItem(Item::get(Item::STONE_PICKAXE, 0, 1));
